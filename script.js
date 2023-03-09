@@ -7,8 +7,6 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() { 
   // Call the function to ask user prompts
   var password = generatePassword(); 
-  var passwordPrompts = generatePassword();
-
 
   // Function that will ask the user prompts
   function generatePassword () {
@@ -57,7 +55,9 @@ function writePassword() {
     }
     console.log(special);
 
-    
+    var choices = [lowercase,uppercase,numeric,special];
+    return choices;
+
   }
 
   console.log(password);
@@ -79,17 +79,17 @@ function writePassword() {
   // var passwordTest = [];
   var passwordChoices = [];
   // IF user selects yes for any given character prompt, random characters chosen AND randomly placed within password array
-if (lowercase == 'YES'){
-  passwordChoices = passwordChoices + lowercaseChar;
+if (password[0] == 'YES'){
+  passwordChoices = passwordChoices.concat(lowercaseChar);
 }
-if (uppercase == 'YES'){
-  passwordChoices = passwordChoices + uppercaseChar;
+if (password[1]  == 'YES'){
+  passwordChoices = passwordChoices.concat(uppercaseChar);
 }
-if (numeric == 'YES'){
-  passwordChoices = passwordChoices + numericChar;
+if (password[2]  == 'YES'){
+  passwordChoices = passwordChoices.concat(numericChar);
 }
-if (special == 'YES'){
-  passwordChoices = passwordChoices + specialChar;
+if (password[3]  == 'YES'){
+  passwordChoices = passwordChoices.concat(specialChar);
 }
 
 
