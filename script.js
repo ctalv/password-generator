@@ -12,7 +12,17 @@ function writePassword() {
   function generatePassword () {
     
     // prompt series
-    var first = prompt("1");
+    var testOne = prompt("1");
+    console.log(testOne);
+
+    var testTwo = prompt("2");
+    console.log(testTwo);
+
+    var testThree = prompt("3");
+    console.log(testThree);
+
+    var testFour = prompt("4");
+    console.log(testFour);
 
     
   }
