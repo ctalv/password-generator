@@ -16,33 +16,43 @@ function writePassword() {
     console.log(lengthPrompt);
 
     // character prompt
-      // lowercase
-      // uppercase
-      // numeric 
-      // special characters
-    var characters = ['lowercase','uppercase','numeric','special characters']
     var characterPrompt = alert("Select which characters you would like to be a part of the password.");
- 
     console.log(characterPrompt);
     
     var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
     lowercase = lowercase.toUpperCase();
-    // validate input function 
+    // validate input 
+    while ((lowercase !== "YES") && (lowercase !== "NO")) {
+      lowercase = prompt("Please type yes or no.");
+      lowercase = lowercase.toUpperCase();
+    }
     console.log(lowercase);
 
     var uppercase = prompt("Would you like uppercase characters? Please type yes or no.");
     uppercase = uppercase.toUpperCase();
-    // validate input function 
+    // validate input 
+    while ((uppercase !== "YES") && (uppercase !== "NO")) {
+      uppercase = prompt("Please type yes or no.");
+      uppercase = uppercase.toUpperCase();
+    }
     console.log(uppercase);
 
     var numeric = prompt("Would you like numeric characters? Please type yes or no.");
     numeric = numeric.toUpperCase();
-    // validate input function 
+    // validate input 
+    while ((numeric !== "YES") && (numeric !== "NO")) {
+      numeric = prompt("Please type yes or no.");
+      numeric = numeric.toUpperCase();
+    }
     console.log(numeric);
 
     var special = prompt("Would you like special characters? Please type yes or no.");
     special = special.toUpperCase();
-    // validate input function 
+    // validate input 
+    while ((special !== "YES") && (special !== "NO")) {
+      special = prompt("Please type yes or no.");
+      special = special.toUpperCase();
+    }
     console.log(special);
 
     
