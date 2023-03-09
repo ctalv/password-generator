@@ -12,11 +12,11 @@ function writePassword() {
   function generatePassword () {
     
     // prompt series + criteria
-    var lengthPrompt = prompt("Choose a length for your password, between 8 and 128 characters.");
+    var lengthPrompt = prompt("Choose a length for the password, between 8 and 128 characters.");
     console.log(lengthPrompt);
 
-    var testTwo = prompt("2");
-    console.log(testTwo);
+    var characterPrompt = prompt("Select which characters you would like to be a part of the password.");
+    console.log(characterPrompt);
 
     var testThree = prompt("3");
     console.log(testThree);
