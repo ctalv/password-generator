@@ -12,7 +12,11 @@ function writePassword() {
   function generatePassword () {
     
     // prompt series + criteria
-    var lengthPrompt = prompt("Choose a length for the password, between 8 and 128 characters.");
+    var lengthPrompt = prompt("Choose a length for the password, at least 8 and up to 128 characters.");
+    // validate length
+    while ((lengthPrompt < 8) || (lengthPrompt > 128)){
+      lengthPrompt = prompt("Please choose a length for the password, at least 8 and up to 128 characters.");
+    }
     console.log(lengthPrompt);
 
     // character prompt
@@ -55,7 +59,7 @@ function writePassword() {
     }
     console.log(special);
 
-    var choices = [lowercase,uppercase,numeric,special];
+    var choices = [lengthPrompt, lowercase,uppercase,numeric,special];
     return choices;
 
   }
@@ -79,16 +83,16 @@ function writePassword() {
   // var passwordTest = [];
   var passwordChoices = [];
   // IF user selects yes for any given character prompt, random characters chosen AND randomly placed within password array
-if (password[0] == 'YES'){
+if (password[1] == 'YES'){
   passwordChoices = passwordChoices.concat(lowercaseChar);
 }
-if (password[1]  == 'YES'){
+if (password[2]  == 'YES'){
   passwordChoices = passwordChoices.concat(uppercaseChar);
 }
-if (password[2]  == 'YES'){
+if (password[3]  == 'YES'){
   passwordChoices = passwordChoices.concat(numericChar);
 }
-if (password[3]  == 'YES'){
+if (password[4]  == 'YES'){
   passwordChoices = passwordChoices.concat(specialChar);
 }
 
