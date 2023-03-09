@@ -57,17 +57,28 @@ function writePassword() {
 
     
   }
-  // Get references to the #password element
-  var passwordText = document.querySelector("#password");
-  
-  passwordText.value = password;
-
   // character arrays (hardcoded for testing)
   var lowercaseChar = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'];
   var uppercaseChar = toUpperCase(lowercaseChar);
   var numericChar = [1,2,3,4,5,6,7,8,9,0];
   var specialChar = ['~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','}','[',']'];
   // incomplete list of spacial characters
+  console.log(lowercaseChar);
+  console.log(uppercaseChar);
+  console.log(numericChar);
+  console.log(specialChar);
+
+  // random password means:
+  // random order of characters
+  // within the selected, random characters chosen 
+  // length selected
+
+
+  // Get references to the #password element
+  var passwordText = document.querySelector("#password");
+  
+  passwordText.value = password;
+
 
 }
 
