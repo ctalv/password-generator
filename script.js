@@ -11,9 +11,9 @@ function writePassword() {
   // Function that will ask the user prompts
   function generatePassword () {
     
-    // prompt series
-    var testOne = prompt("1");
-    console.log(testOne);
+    // prompt series + criteria
+    var lengthPrompt = prompt("Choose a length for your password, between 8 and 128 characters.");
+    console.log(lengthPrompt);
 
     var testTwo = prompt("2");
     console.log(testTwo);
