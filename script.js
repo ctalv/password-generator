@@ -15,8 +15,16 @@ function writePassword() {
     var lengthPrompt = prompt("Choose a length for the password, between 8 and 128 characters.");
     console.log(lengthPrompt);
 
+    // character prompt
+      // lowercase
+      // uppercase
+      // numeric 
+      // special characters
+    var characters = ['lowercase','uppercase','numeric','special characters']
     var characterPrompt = prompt("Select which characters you would like to be a part of the password.");
+ 
     console.log(characterPrompt);
+    
 
     var testThree = prompt("3");
     console.log(testThree);
