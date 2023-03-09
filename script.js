@@ -4,17 +4,17 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() { 
+function writePassword() {
   // Call the function to ask user prompts
-  var password = generatePassword(); 
+  var passwordChar = generatePassword();
 
   // Function that will ask the user prompts
-  function generatePassword () {
-    
+  function generatePassword() {
+
     // prompt series + criteria
     var lengthPrompt = prompt("Choose a length for the password, at least 8 and up to 128 characters.");
     // validate length
-    while ((lengthPrompt < 8) || (lengthPrompt > 128)){
+    while ((lengthPrompt < 8) || (lengthPrompt > 128)) {
       lengthPrompt = prompt("Please choose a length for the password, at least 8 and up to 128 characters.");
     }
     console.log(lengthPrompt);
@@ -22,7 +22,7 @@ function writePassword() {
     // character prompt
     var characterAlert = alert("Select which characters you would like to be a part of the password.");
     console.log(characterAlert);
-    
+
     var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
     lowercase = lowercase.toUpperCase();
     // validate input 
@@ -59,20 +59,17 @@ function writePassword() {
     }
     console.log(special);
 
-    var choices = [lengthPrompt, lowercase,uppercase,numeric,special];
+    var choices = [lengthPrompt, lowercase, uppercase, numeric, special];
     return choices;
 
   }
 
-  console.log(password);
+  console.log(passwordChar);
   // character arrays (hardcoded for testing)
-  var lowercaseChar = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'];
+  var lowercaseChar = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
   var uppercaseChar = lowercaseChar;
-//  for (var i = 0; i < uppercaseChar.length(); i++) {
-//   uppercaseChar = [uppercaseChar.toUpperCase(i)];
-//  }
-  var numericChar = [1,2,3,4,5,6,7,8,9,0];
-  var specialChar = ['~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','}','[',']'];
+  var numericChar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  var specialChar = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '{', '}', '[', ']'];
   // incomplete list of spacial characters
   console.log(lowercaseChar);
   console.log(uppercaseChar);
@@ -82,28 +79,34 @@ function writePassword() {
   // generate an empty array of the selected length
   // var passwordTest = [];
   var passwordChoices = [];
-  // IF user selects yes for any given character prompt, random characters chosen AND randomly placed within password array
-if (password[1] == 'YES'){
-  passwordChoices = passwordChoices.concat(lowercaseChar);
-}
-if (password[2]  == 'YES'){
-  passwordChoices = passwordChoices.concat(uppercaseChar);
-}
-if (password[3]  == 'YES'){
-  passwordChoices = passwordChoices.concat(numericChar);
-}
-if (password[4]  == 'YES'){
-  passwordChoices = passwordChoices.concat(specialChar);
-}
+  // IF user selects yes for any given character prompt 
+  if (passwordChar[1] == 'YES') {
+    passwordChoices = passwordChoices.concat(lowercaseChar);
+  }
+  if (passwordChar[2] == 'YES') {
+    passwordChoices = passwordChoices.concat(uppercaseChar);
+  }
+  if (passwordChar[3] == 'YES') {
+    passwordChoices = passwordChoices.concat(numericChar);
+  }
+  if (passwordChar[4] == 'YES') {
+    passwordChoices = passwordChoices.concat(specialChar);
+  }
+
+  // Random characters chosen AND randomly placed within password array
+  var password = Array.from({length: passwordChar[0]});
+  console.log(password);
+  for (var i = 0; i < passwordChar[0]; i++){
+    password[i] = passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
+  } 
 
 
-
-console.log(passwordChoices);
+  console.log(password);
   // array to be filled completely but at random
 
   // Get references to the #password element
   var passwordText = document.querySelector("#password");
-  
+
   passwordText.value = password;
 
 
