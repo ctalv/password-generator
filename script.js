@@ -7,7 +7,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() { 
   // Call the function to ask user prompts
   var password = generatePassword(); 
-  
+
   // Function that will ask the user prompts
   function generatePassword () {
     
@@ -16,8 +16,8 @@ function writePassword() {
     console.log(lengthPrompt);
 
     // character prompt
-    var characterPrompt = alert("Select which characters you would like to be a part of the password.");
-    console.log(characterPrompt);
+    var characterAlert = alert("Select which characters you would like to be a part of the password.");
+    console.log(characterAlert);
     
     var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
     lowercase = lowercase.toUpperCase();
@@ -55,12 +55,53 @@ function writePassword() {
     }
     console.log(special);
 
-    
+    var choices = [lowercase,uppercase,numeric,special];
+    return choices;
+
   }
+
+  console.log(password);
+  // character arrays (hardcoded for testing)
+  var lowercaseChar = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'];
+  var uppercaseChar = lowercaseChar;
+//  for (var i = 0; i < uppercaseChar.length(); i++) {
+//   uppercaseChar = [uppercaseChar.toUpperCase(i)];
+//  }
+  var numericChar = [1,2,3,4,5,6,7,8,9,0];
+  var specialChar = ['~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','}','[',']'];
+  // incomplete list of spacial characters
+  console.log(lowercaseChar);
+  console.log(uppercaseChar);
+  console.log(numericChar);
+  console.log(specialChar);
+
+  // generate an empty array of the selected length
+  // var passwordTest = [];
+  var passwordChoices = [];
+  // IF user selects yes for any given character prompt, random characters chosen AND randomly placed within password array
+if (password[0] == 'YES'){
+  passwordChoices = passwordChoices.concat(lowercaseChar);
+}
+if (password[1]  == 'YES'){
+  passwordChoices = passwordChoices.concat(uppercaseChar);
+}
+if (password[2]  == 'YES'){
+  passwordChoices = passwordChoices.concat(numericChar);
+}
+if (password[3]  == 'YES'){
+  passwordChoices = passwordChoices.concat(specialChar);
+}
+
+
+
+console.log(passwordChoices);
+  // array to be filled completely but at random
+
   // Get references to the #password element
   var passwordText = document.querySelector("#password");
   
   passwordText.value = password;
+
 
 }
 
