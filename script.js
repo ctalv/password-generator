@@ -16,18 +16,16 @@ function writePassword() {
     console.log(lengthPrompt);
 
     // character prompt
-      // lowercase
-      // uppercase
-      // numeric 
-      // special characters
-    var characters = ['lowercase','uppercase','numeric','special characters']
     var characterPrompt = alert("Select which characters you would like to be a part of the password.");
- 
     console.log(characterPrompt);
     
     var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
     lowercase = lowercase.toUpperCase();
     // validate input function 
+    while ((lowercase !== "YES") && (lowercase !== "NO")) {
+      lowercase = prompt("Please type yes or no.");
+      lowercase = lowercase.toUpperCase();
+    }
     console.log(lowercase);
 
     var uppercase = prompt("Would you like uppercase characters? Please type yes or no.");
