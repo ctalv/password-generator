@@ -21,13 +21,15 @@ function writePassword() {
       // numeric 
       // special characters
     var characters = ['lowercase','uppercase','numeric','special characters']
-    var characterPrompt = prompt("Select which characters you would like to be a part of the password.");
+    var characterPrompt = alert("Select which characters you would like to be a part of the password.");
  
     console.log(characterPrompt);
     
 
-    var testThree = prompt("3");
-    console.log(testThree);
+    var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
+    lowercase = lowercase.toUpperCase();
+    // validate input function 
+    console.log(lowercase);
 
     var testFour = prompt("4");
     console.log(testFour);
