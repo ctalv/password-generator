@@ -25,14 +25,25 @@ function writePassword() {
  
     console.log(characterPrompt);
     
-
     var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
     lowercase = lowercase.toUpperCase();
     // validate input function 
     console.log(lowercase);
 
-    var testFour = prompt("4");
-    console.log(testFour);
+    var uppercase = prompt("Would you like uppercase characters? Please type yes or no.");
+    uppercase = uppercase.toUpperCase();
+    // validate input function 
+    console.log(uppercase);
+
+    var numeric = prompt("Would you like numeric characters? Please type yes or no.");
+    numeric = numeric.toUpperCase();
+    // validate input function 
+    console.log(numeric);
+
+    var special = prompt("Would you like special characters? Please type yes or no.");
+    special = special.toUpperCase();
+    // validate input function 
+    console.log(special);
 
     
   }
