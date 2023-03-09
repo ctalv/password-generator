@@ -62,6 +62,13 @@ function writePassword() {
   
   passwordText.value = password;
 
+  // character arrays (hardcoded for testing)
+  var lowercaseChar = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m'];
+  var uppercaseChar = toUpperCase(lowercaseChar);
+  var numericChar = [1,2,3,4,5,6,7,8,9,0];
+  var specialChar = ['~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','}','[',']'];
+  // incomplete list of spacial characters
+
 }
 
 // Add event listener to generate button
