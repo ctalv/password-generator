@@ -71,13 +71,14 @@ function writePassword() {
   }
 
   console.log(passwordChar);
-  
+
   var lowercaseChar = ('qwertyuiopasdfghjklzxcvbnm');
-  lowercaseChar = lowercaseChar.split("");
   var uppercaseChar = ('QWERTYUIOPASDFGHJKLZXCVBNM');
-  uppercaseChar = uppercaseChar.split("");
-  var numericChar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   var specialChar = ('`~!@#$%^&*()_-+={[}]|\':;"<,>.?/\\')
+  var numericChar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+  uppercaseChar = uppercaseChar.split("");
+  lowercaseChar = lowercaseChar.split("");
   specialChar = specialChar.split("");
   // \ '
   // incomplete list of spacial characters
@@ -89,28 +90,125 @@ function writePassword() {
   // generate an empty array of the selected length
   // var passwordTest = [];
   var passwordChoices = [];
+  var passwordCharArray = [];
+  var numYes = 0
+  for (var i = 0; i < passwordChar.length; i++) {
+    if (passwordChar[i] == 'YES') {
+      numYes++;
+      console.log(passwordChar[i]);
+      console.log(numYes);
+
+    }
+  }
+  console.log(numYes);
+  var passwordDiv = passwordChar[0] / numYes;
+  console.log(passwordDiv);
+
   // IF user selects yes for any given character prompt 
   if (passwordChar[1] == 'YES') {
     passwordChoices = passwordChoices.concat(lowercaseChar);
+    var lowercaseSelect = [];
+    for (var i = 0; i < Math.floor(passwordDiv); i++) {
+      lowercaseSelect[i] = lowercaseChar[(Math.floor(Math.random() * lowercaseChar.length))];
+      console.log(lowercaseSelect)
+      
+    }
+    passwordCharArray = passwordCharArray.concat(lowercaseSelect)
   }
   if (passwordChar[2] == 'YES') {
     passwordChoices = passwordChoices.concat(uppercaseChar);
+    var uppercaseSelect = [];
+    for (var i = 0; i < Math.floor(passwordDiv); i++) {
+      uppercaseSelect[i] = uppercaseChar[(Math.floor(Math.random() * uppercaseChar.length))];
+      console.log(uppercaseSelect)
+      
+    }
+    passwordCharArray = passwordCharArray.concat(uppercaseSelect)
   }
   if (passwordChar[3] == 'YES') {
     passwordChoices = passwordChoices.concat(numericChar);
+    var numericSelect = [];
+    for (var i = 0; i < Math.floor(passwordDiv); i++) {
+      numericSelect[i] = numericChar[(Math.floor(Math.random() * numericChar.length))];
+      console.log(numericSelect)
+      
+    }
+    passwordCharArray = passwordCharArray.concat(numericSelect)
   }
   if (passwordChar[4] == 'YES') {
     passwordChoices = passwordChoices.concat(specialChar)
+    var specialSelect = [];
+    for (var i = 0; i < Math.floor(passwordDiv); i++) {
+      specialSelect[i] = specialChar[(Math.floor(Math.random() * specialChar.length))];
+      console.log(specialSelect)
+      
+    }
+    passwordCharArray = passwordCharArray.concat(specialSelect)
   }
 
+  console.log(passwordCharArray);
+
+  if (passwordChar[0]%numYes) {
+    passwordCharArray.push(passwordChoices[(Math.floor(Math.random() * passwordChoices.length))]);
+  }
+
+
+  // for (var i = 1; i <= numYes; i++) {
+  //   if (passwordChar[i] == 'YES') {
+  //     passwordChoices = passwordChoices.concat(lowercaseChar);
+  //   }
+  // }
+
+
+
+  // figure out what is YES
+  // randomly select an equal amount from each yes
+  // divide password length by how many YESes
+  // randomly choose from char arrays
+  // add arrays together
+  // randomly choose from that array
+  // if not full length, randomly choose from big array
+
+
   // Random characters chosen AND randomly placed within password array
-  var password = Array.from({length: passwordChar[0]});
+    // randomly grab and place in a new array
+    
+console.log(passwordCharArray.length);
+
+// copy of array to erase (will use og array after testing)
+var copyPasswordCharArray = passwordCharArray;
+
+console.log(passwordCharArray);
+
+var newPassword = [];
+
+  for (var i = copyPasswordCharArray.length; i > 0; i--) {
+    // choose random spot in array
+    var selectNum = Math.floor(Math.random()*copyPasswordCharArray.length);
+    // grab the string in that spot
+    var selectChar = copyPasswordCharArray[selectNum];
+    // erase that spot AND shorten array accordingly
+    copyPasswordCharArray.splice(selectNum, 1);
+    // place randomly in new empty array (or from start to finish)
+    newPassword = newPassword.concat(selectChar);
+
+    console.log(selectNum);
+    console.log(selectChar);
+    console.log(newPassword);
+    console.log(copyPasswordCharArray);
+    console.log(passwordCharArray);
+
+  }
+
+  console.log(passwordCharArray);
+
+  var password = Array.from({ length: passwordChar[0] });
   console.log(password);
-  for (var i = 0; i < passwordChar[0]; i++){
+  for (var i = 0; i < passwordChar[0]; i++) {
     password[i] = passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
-  } 
+  }
 
-
+console.log(passwordCharArray)
   console.log(password);
   // array to be filled completely but at random
 
@@ -118,7 +216,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-// toString
+  // toString
 
 }
 
