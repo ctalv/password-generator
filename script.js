@@ -65,13 +65,14 @@ function writePassword() {
   }
 
   console.log(passwordChar);
-  
+
   var lowercaseChar = ('qwertyuiopasdfghjklzxcvbnm');
-  lowercaseChar = lowercaseChar.split("");
   var uppercaseChar = ('QWERTYUIOPASDFGHJKLZXCVBNM');
-  uppercaseChar = uppercaseChar.split("");
-  var numericChar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   var specialChar = ('`~!@#$%^&*()_-+={[}]|\':;"<,>.?/\\')
+  var numericChar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  
+  uppercaseChar = uppercaseChar.split("");
+  lowercaseChar = lowercaseChar.split("");
   specialChar = specialChar.split("");
   // \ '
   // incomplete list of spacial characters
