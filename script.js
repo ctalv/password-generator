@@ -14,7 +14,6 @@ function writePassword() {
     // prompt series + criteria
     var lengthPrompt = prompt("Choose a length for the password, at least 8 and up to 128 characters.");
     // validate length
-    // lengthPrompt = "f"; // TEST
     console.log(lengthPrompt);
     while ((lengthPrompt < 8) || (lengthPrompt > 128)) {
       lengthPrompt = prompt("Please enter a length for the password, at least 8 and up to 128 characters.");
@@ -28,7 +27,6 @@ function writePassword() {
     var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
     lowercase = lowercase.toUpperCase();
     // validate input 
-    lowercase = "YES"; // TEST
     while ((lowercase !== "YES") && (lowercase !== "NO")) {
       lowercase = prompt("Please type yes or no.");
       lowercase = lowercase.toUpperCase();
@@ -38,7 +36,6 @@ function writePassword() {
     var uppercase = prompt("Would you like uppercase characters? Please type yes or no.");
     uppercase = uppercase.toUpperCase();
     // validate input 
-    uppercase = "YES"; // TEST
     while ((uppercase !== "YES") && (uppercase !== "NO")) {
       uppercase = prompt("Please type yes or no.");
       uppercase = uppercase.toUpperCase();
@@ -48,7 +45,6 @@ function writePassword() {
     var numeric = prompt("Would you like numeric characters? Please type yes or no.");
     numeric = numeric.toUpperCase();
     // validate input 
-    numeric = "YES"; // TEST
     while ((numeric !== "YES") && (numeric !== "NO")) {
       numeric = prompt("Please type yes or no.");
       numeric = numeric.toUpperCase();
@@ -58,7 +54,6 @@ function writePassword() {
     var special = prompt("Would you like special characters? Please type yes or no.");
     special = special.toUpperCase();
     // validate input 
-    special = "YES"; // TEST
     while ((special !== "YES") && (special !== "NO")) {
       special = prompt("Please type yes or no.");
       special = special.toUpperCase();
@@ -80,7 +75,7 @@ function writePassword() {
   uppercaseChar = uppercaseChar.split("");
   lowercaseChar = lowercaseChar.split("");
   specialChar = specialChar.split("");
-  // \ '
+  
   // incomplete list of spacial characters
   console.log(lowercaseChar);
   console.log(uppercaseChar);
@@ -153,13 +148,6 @@ function writePassword() {
   }
 
 
-  // for (var i = 1; i <= numYes; i++) {
-  //   if (passwordChar[i] == 'YES') {
-  //     passwordChoices = passwordChoices.concat(lowercaseChar);
-  //   }
-  // }
-
-
 
   // figure out what is YES
   // randomly select an equal amount from each yes
@@ -202,11 +190,11 @@ var newPassword = [];
 
   console.log(passwordCharArray);
 
-  var password = Array.from({ length: passwordChar[0] });
-  console.log(password);
-  for (var i = 0; i < passwordChar[0]; i++) {
-    password[i] = passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
-  }
+  // var password = Array.from({ length: passwordChar[0] });
+  // console.log(password);
+  // for (var i = 0; i < passwordChar[0]; i++) {
+  //   password[i] = passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
+  // }
 
 console.log(passwordCharArray)
   console.log(password);
@@ -215,6 +203,7 @@ console.log(passwordCharArray)
   // Get references to the #password element
   var passwordText = document.querySelector("#password");
 
+  var password = newPassword.join("");
   passwordText.value = password;
   // toString
 
