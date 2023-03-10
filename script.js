@@ -195,11 +195,11 @@ var newPassword = [];
 
   console.log(passwordCharArray);
 
-  var password = Array.from({ length: passwordChar[0] });
-  console.log(password);
-  for (var i = 0; i < passwordChar[0]; i++) {
-    password[i] = passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
-  }
+  // var password = Array.from({ length: passwordChar[0] });
+  // console.log(password);
+  // for (var i = 0; i < passwordChar[0]; i++) {
+  //   password[i] = passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
+  // }
 
 console.log(passwordCharArray)
   console.log(password);
@@ -208,7 +208,8 @@ console.log(passwordCharArray)
   // Get references to the #password element
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = newPassword;
+  var password = newPassword.join("");
+  passwordText.value = password;
   // toString
 
 }
