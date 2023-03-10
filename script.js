@@ -97,15 +97,22 @@ function writePassword() {
       numYes++;
       console.log(passwordChar[i]);
       console.log(numYes);
+      
     }
     }
   console.log(numYes);
+  var passwordDiv = passwordChar[0]/numYes;
+  console.log(passwordDiv);
 
   // IF user selects yes for any given character prompt 
   if (passwordChar[1] == 'YES') {
     passwordChoices = passwordChoices.concat(lowercaseChar);
-    // passwordChar[0]/
+    var lowercaseSelect = [];
+    for (var i = 0; i < Math.floor(passwordDiv); i++) {
+    lowercaseSelect[i] = lowercaseChar[(Math.floor(Math.random() * lowercaseChar.length))];
+    console.log(lowercaseSelect)
   }
+}
   if (passwordChar[2] == 'YES') {
     passwordChoices = passwordChoices.concat(uppercaseChar);
   }
