@@ -80,7 +80,7 @@ function writePassword() {
   uppercaseChar = uppercaseChar.split("");
   lowercaseChar = lowercaseChar.split("");
   specialChar = specialChar.split("");
-  // \ '
+  
   // incomplete list of spacial characters
   console.log(lowercaseChar);
   console.log(uppercaseChar);
@@ -153,13 +153,6 @@ function writePassword() {
   }
 
 
-  // for (var i = 1; i <= numYes; i++) {
-  //   if (passwordChar[i] == 'YES') {
-  //     passwordChoices = passwordChoices.concat(lowercaseChar);
-  //   }
-  // }
-
-
 
   // figure out what is YES
   // randomly select an equal amount from each yes
@@ -215,7 +208,7 @@ console.log(passwordCharArray)
   // Get references to the #password element
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = newPassword;
   // toString
 
 }
