@@ -111,8 +111,9 @@ function writePassword() {
     for (var i = 0; i < Math.floor(passwordDiv); i++) {
       lowercaseSelect[i] = lowercaseChar[(Math.floor(Math.random() * lowercaseChar.length))];
       console.log(lowercaseSelect)
-      passwordCharArray = passwordCharArray.concat(lowercaseChar)
+      
     }
+    passwordCharArray = passwordCharArray.concat(lowercaseSelect)
   }
   if (passwordChar[2] == 'YES') {
     passwordChoices = passwordChoices.concat(uppercaseChar);
@@ -120,8 +121,9 @@ function writePassword() {
     for (var i = 0; i < Math.floor(passwordDiv); i++) {
       uppercaseSelect[i] = uppercaseChar[(Math.floor(Math.random() * uppercaseChar.length))];
       console.log(uppercaseSelect)
-      passwordCharArray = passwordCharArray.concat(uppercaseChar)
+      
     }
+    passwordCharArray = passwordCharArray.concat(uppercaseSelect)
   }
   if (passwordChar[3] == 'YES') {
     passwordChoices = passwordChoices.concat(numericChar);
@@ -129,8 +131,9 @@ function writePassword() {
     for (var i = 0; i < Math.floor(passwordDiv); i++) {
       numericSelect[i] = numericChar[(Math.floor(Math.random() * numericChar.length))];
       console.log(numericSelect)
-      passwordCharArray = passwordCharArray.concat(numericChar)
+      
     }
+    passwordCharArray = passwordCharArray.concat(numericSelect)
   }
   if (passwordChar[4] == 'YES') {
     passwordChoices = passwordChoices.concat(specialChar)
@@ -138,10 +141,16 @@ function writePassword() {
     for (var i = 0; i < Math.floor(passwordDiv); i++) {
       specialSelect[i] = specialChar[(Math.floor(Math.random() * specialChar.length))];
       console.log(specialSelect)
-      passwordCharArray = passwordCharArray.concat(specialChar)
+      
     }
+    passwordCharArray = passwordCharArray.concat(specialSelect)
   }
 
+  console.log(passwordCharArray);
+
+  if (passwordChar[0]%numYes) {
+    passwordCharArray.push(passwordChoices[(Math.floor(Math.random() * passwordChoices.length))]);
+  }
   // for (var i = 1; i <= numYes; i++) {
   //   if (passwordChar[i] == 'YES') {
   //     passwordChoices = passwordChoices.concat(lowercaseChar);
@@ -166,7 +175,7 @@ function writePassword() {
     password[i] = passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
   }
 
-
+console.log(passwordCharArray)
   console.log(password);
   // array to be filled completely but at random
 
