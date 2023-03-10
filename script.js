@@ -65,12 +65,15 @@ function writePassword() {
   }
 
   console.log(passwordChar);
-  // character arrays (hardcoded for testing)
-  var lowercaseChar = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
+  
+  var lowercaseChar = ('qwertyuiopasdfghjklzxcvbnm');
+  lowercaseChar = lowercaseChar.split("");
   var uppercaseChar = ('QWERTYUIOPASDFGHJKLZXCVBNM');
   uppercaseChar = uppercaseChar.split("");
   var numericChar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-  var specialChar = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '{', '}', '[', ']'];
+  var specialChar = ('`~!@#$%^&*()_-+={[}]|\':;"<,>.?/\\')
+  specialChar = specialChar.split("");
+  // \ '
   // incomplete list of spacial characters
   console.log(lowercaseChar);
   console.log(uppercaseChar);
@@ -109,7 +112,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+// toString
 
 }
 
