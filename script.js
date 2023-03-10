@@ -111,6 +111,7 @@ function writePassword() {
     for (var i = 0; i < Math.floor(passwordDiv); i++) {
     lowercaseSelect[i] = lowercaseChar[(Math.floor(Math.random() * lowercaseChar.length))];
     console.log(lowercaseSelect)
+    passwordCharArray = passwordCharArray.concat(lowercaseChar)
   }
 }
   if (passwordChar[2] == 'YES') {
@@ -128,6 +129,8 @@ function writePassword() {
       passwordChoices = passwordChoices.concat(lowercaseChar);
     }
   }
+
+   
 
 // figure out what is YES
 // randomly select an equal amount from each yes
