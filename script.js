@@ -151,6 +151,8 @@ function writePassword() {
   if (passwordChar[0]%numYes) {
     passwordCharArray.push(passwordChoices[(Math.floor(Math.random() * passwordChoices.length))]);
   }
+
+
   // for (var i = 1; i <= numYes; i++) {
   //   if (passwordChar[i] == 'YES') {
   //     passwordChoices = passwordChoices.concat(lowercaseChar);
@@ -169,6 +171,37 @@ function writePassword() {
 
 
   // Random characters chosen AND randomly placed within password array
+    // randomly grab and place in a new array
+    
+console.log(passwordCharArray.length);
+
+// copy of array to erase (will use og array after testing)
+var copyPasswordCharArray = passwordCharArray;
+
+console.log(passwordCharArray);
+
+var newPassword = [];
+
+  for (var i = copyPasswordCharArray.length; i > 0; i--) {
+    // choose random spot in array
+    var selectNum = Math.floor(Math.random()*copyPasswordCharArray.length);
+    // grab the string in that spot
+    var selectChar = copyPasswordCharArray[selectNum];
+    // erase that spot AND shorten array accordingly
+    copyPasswordCharArray.splice(selectNum, 1);
+    // place randomly in new empty array (or from start to finish)
+    newPassword = newPassword.concat(selectChar);
+
+    console.log(selectNum);
+    console.log(selectChar);
+    console.log(newPassword);
+    console.log(copyPasswordCharArray);
+    console.log(passwordCharArray);
+
+  }
+
+  console.log(passwordCharArray);
+
   var password = Array.from({ length: passwordChar[0] });
   console.log(password);
   for (var i = 0; i < passwordChar[0]; i++) {
