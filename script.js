@@ -67,7 +67,8 @@ function writePassword() {
   console.log(passwordChar);
   // character arrays (hardcoded for testing)
   var lowercaseChar = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
-  var uppercaseChar = lowercaseChar;
+  var uppercaseChar = ('QWERTYUIOPASDFGHJKLZXCVBNM');
+  uppercaseChar = uppercaseChar.split("");
   var numericChar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   var specialChar = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '{', '}', '[', ']'];
   // incomplete list of spacial characters
@@ -90,7 +91,7 @@ function writePassword() {
     passwordChoices = passwordChoices.concat(numericChar);
   }
   if (passwordChar[4] == 'YES') {
-    passwordChoices = passwordChoices.concat(specialChar);
+    passwordChoices = passwordChoices.concat(specialChar)
   }
 
   // Random characters chosen AND randomly placed within password array
