@@ -90,9 +90,21 @@ function writePassword() {
   // generate an empty array of the selected length
   // var passwordTest = [];
   var passwordChoices = [];
+  var passwordCharArray = [];
+  var numYes = 0
+    for (var i = 0; i < passwordChar.length; i++) {
+      if (passwordChar[i] == 'YES') {
+      numYes++;
+      console.log(passwordChar[i]);
+      console.log(numYes);
+    }
+    }
+  console.log(numYes);
+
   // IF user selects yes for any given character prompt 
   if (passwordChar[1] == 'YES') {
     passwordChoices = passwordChoices.concat(lowercaseChar);
+    // passwordChar[0]/
   }
   if (passwordChar[2] == 'YES') {
     passwordChoices = passwordChoices.concat(uppercaseChar);
@@ -103,6 +115,21 @@ function writePassword() {
   if (passwordChar[4] == 'YES') {
     passwordChoices = passwordChoices.concat(specialChar)
   }
+
+  for (var i = 1; i <= numYes; i++) {
+    if (passwordChar[i] == 'YES') {
+      passwordChoices = passwordChoices.concat(lowercaseChar);
+    }
+  }
+
+// figure out what is YES
+// randomly select an equal amount from each yes
+// divide password length by how many YESes
+// randomly choose from char arrays
+// add arrays together
+// randomly choose from that array
+// if not full length, randomly choose from big array
+
 
   // Random characters chosen AND randomly placed within password array
   var password = Array.from({length: passwordChar[0]});
