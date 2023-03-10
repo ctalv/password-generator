@@ -15,7 +15,8 @@ function writePassword() {
     var lengthPrompt = prompt("Choose a length for the password, at least 8 and up to 128 characters.");
     // validate length
     // lengthPrompt = "f"; // TEST
-    while ((lengthPrompt < 8) || (lengthPrompt > 128)) { // || (lengthPrompt !== typeof "number")) {
+    console.log(lengthPrompt);
+    while ((lengthPrompt < 8) || (lengthPrompt > 128)) {
       lengthPrompt = prompt("Please enter a length for the password, at least 8 and up to 128 characters.");
     }
     console.log(typeof lengthPrompt);
