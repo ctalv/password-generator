@@ -76,7 +76,7 @@ function writePassword() {
   var uppercaseChar = ('QWERTYUIOPASDFGHJKLZXCVBNM');
   var specialChar = ('`~!@#$%^&*()_-+={[}]|\':;"<,>.?/\\')
   var numericChar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-  
+
   uppercaseChar = uppercaseChar.split("");
   lowercaseChar = lowercaseChar.split("");
   specialChar = specialChar.split("");
@@ -92,16 +92,16 @@ function writePassword() {
   var passwordChoices = [];
   var passwordCharArray = [];
   var numYes = 0
-    for (var i = 0; i < passwordChar.length; i++) {
-      if (passwordChar[i] == 'YES') {
+  for (var i = 0; i < passwordChar.length; i++) {
+    if (passwordChar[i] == 'YES') {
       numYes++;
       console.log(passwordChar[i]);
       console.log(numYes);
-      
+
     }
-    }
+  }
   console.log(numYes);
-  var passwordDiv = passwordChar[0]/numYes;
+  var passwordDiv = passwordChar[0] / numYes;
   console.log(passwordDiv);
 
   // IF user selects yes for any given character prompt 
@@ -109,44 +109,62 @@ function writePassword() {
     passwordChoices = passwordChoices.concat(lowercaseChar);
     var lowercaseSelect = [];
     for (var i = 0; i < Math.floor(passwordDiv); i++) {
-    lowercaseSelect[i] = lowercaseChar[(Math.floor(Math.random() * lowercaseChar.length))];
-    console.log(lowercaseSelect)
-    passwordCharArray = passwordCharArray.concat(lowercaseChar)
+      lowercaseSelect[i] = lowercaseChar[(Math.floor(Math.random() * lowercaseChar.length))];
+      console.log(lowercaseSelect)
+      passwordCharArray = passwordCharArray.concat(lowercaseChar)
+    }
   }
-}
   if (passwordChar[2] == 'YES') {
     passwordChoices = passwordChoices.concat(uppercaseChar);
+    var uppercaseSelect = [];
+    for (var i = 0; i < Math.floor(passwordDiv); i++) {
+      uppercaseSelect[i] = uppercaseChar[(Math.floor(Math.random() * uppercaseChar.length))];
+      console.log(uppercaseSelect)
+      passwordCharArray = passwordCharArray.concat(uppercaseChar)
+    }
   }
   if (passwordChar[3] == 'YES') {
     passwordChoices = passwordChoices.concat(numericChar);
+    var numericSelect = [];
+    for (var i = 0; i < Math.floor(passwordDiv); i++) {
+      numericSelect[i] = numericChar[(Math.floor(Math.random() * numericChar.length))];
+      console.log(numericSelect)
+      passwordCharArray = passwordCharArray.concat(numericChar)
+    }
   }
   if (passwordChar[4] == 'YES') {
     passwordChoices = passwordChoices.concat(specialChar)
-  }
-
-  for (var i = 1; i <= numYes; i++) {
-    if (passwordChar[i] == 'YES') {
-      passwordChoices = passwordChoices.concat(lowercaseChar);
+    var specialSelect = [];
+    for (var i = 0; i < Math.floor(passwordDiv); i++) {
+      specialSelect[i] = specialChar[(Math.floor(Math.random() * specialChar.length))];
+      console.log(specialSelect)
+      passwordCharArray = passwordCharArray.concat(specialChar)
     }
   }
 
-   
+  // for (var i = 1; i <= numYes; i++) {
+  //   if (passwordChar[i] == 'YES') {
+  //     passwordChoices = passwordChoices.concat(lowercaseChar);
+  //   }
+  // }
 
-// figure out what is YES
-// randomly select an equal amount from each yes
-// divide password length by how many YESes
-// randomly choose from char arrays
-// add arrays together
-// randomly choose from that array
-// if not full length, randomly choose from big array
+
+
+  // figure out what is YES
+  // randomly select an equal amount from each yes
+  // divide password length by how many YESes
+  // randomly choose from char arrays
+  // add arrays together
+  // randomly choose from that array
+  // if not full length, randomly choose from big array
 
 
   // Random characters chosen AND randomly placed within password array
-  var password = Array.from({length: passwordChar[0]});
+  var password = Array.from({ length: passwordChar[0] });
   console.log(password);
-  for (var i = 0; i < passwordChar[0]; i++){
+  for (var i = 0; i < passwordChar[0]; i++) {
     password[i] = passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
-  } 
+  }
 
 
   console.log(password);
@@ -156,7 +174,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-// toString
+  // toString
 
 }
 
