@@ -144,6 +144,9 @@ function writePassword() {
   console.log(passwordCharArray);
 
   if (passwordChar[0]%numYes) {
+    var remainder = (Math.floor(passwordDiv))*numYes;
+
+    console.log(remainder);
     passwordCharArray.push(passwordChoices[(Math.floor(Math.random() * passwordChoices.length))]);
   }
 
