@@ -14,16 +14,20 @@ function writePassword() {
     // prompt series + criteria
     var lengthPrompt = prompt("Choose a length for the password, at least 8 and up to 128 characters.");
     // validate length
-    lengthPrompt = lengthPrompt * 1
     console.log(lengthPrompt);
-    while ((lengthPrompt < 8) || (lengthPrompt > 128)) {
+    console.log(typeof(lengthPrompt))
+    // convert number string to a number
+    lengthPromptCon = lengthPrompt *1;
+    console.log(lengthPrompt);
+    console.log(typeof(lengthPrompt))
+    console.log(lengthPromptCon);
+    console.log(typeof(lengthPromptCon))
+    while ((lengthPrompt < 8) || (lengthPrompt > 128) || (lengthPrompt==NaN)) {
       lengthPrompt = prompt("Please enter a length for the password, at least 8 and up to 128 characters.");
-    
     }
 
     // character prompt
     var characterAlert = alert("Select which characters you would like to be a part of the password.");
-    console.log(characterAlert);
 
     var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
     lowercase = lowercase.toUpperCase();
