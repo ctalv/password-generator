@@ -11,32 +11,57 @@ function writePassword() {
   // Function that will ask the user prompts
   function generatePassword() {
 
-    // prompt series + criteria
+    // Prompt series + Criteria
     var lengthPrompt = prompt("Choose a length for the password, at least 8 and up to 128 characters.");
-    // validate length
-    console.log(lengthPrompt);
-    console.log(typeof(lengthPrompt))
-    // convert number string to a number
-    lengthPromptCon = lengthPrompt *1;
-    console.log(lengthPrompt);
-    console.log(typeof(lengthPrompt))
-    console.log(lengthPromptCon);
-    console.log(typeof(lengthPromptCon))
+
+    // console.log(lengthPrompt);
+    // console.log(typeof(lengthPrompt))
+    // // convert number string to a number
+    // lengthPromptCon = lengthPrompt *1;
+    // console.log(lengthPrompt);
+    // console.log(typeof(lengthPrompt))
+    // console.log(lengthPromptCon);
+    // console.log(typeof(lengthPromptCon))
+
+
+    // TESTING
+    // tried = Number(); *1;
+
+    var testNum = 9;
+    var testChar = 'f';
+
+    console.log(testNum);
+    console.log(typeof(testNum));
+    console.log(testChar);
+    console.log(typeof(testChar));
+
+    testNum = Number(testNum);
+    testChar = Number(testChar);
+
+    console.log(testNum);
+    console.log(typeof(testNum));
+    console.log(testChar);
+    console.log(typeof(testChar));
+    // TESTING 
+
+    // Validate length 
     while ((lengthPrompt < 8) || (lengthPrompt > 128) || (lengthPrompt==NaN)) {
       lengthPrompt = prompt("Please enter a length for the password, at least 8 and up to 128 characters.");
     }
 
-    // character prompt
+    // Character prompts
     var characterAlert = alert("Select which characters you would like to be a part of the password.");
 
+    // Lowercase character prompt
     var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
     lowercase = lowercase.toUpperCase();
-    // validate input 
+    // Validate input 
     while ((lowercase !== "YES") && (lowercase !== "NO")) {
       lowercase = prompt("Please type yes or no.");
       lowercase = lowercase.toUpperCase();
     }
     console.log(lowercase);
+
 
     var uppercase = prompt("Would you like uppercase characters? Please type yes or no.");
     uppercase = uppercase.toUpperCase();
