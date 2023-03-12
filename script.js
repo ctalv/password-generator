@@ -14,11 +14,12 @@ function writePassword() {
     // prompt series + criteria
     var lengthPrompt = prompt("Choose a length for the password, at least 8 and up to 128 characters.");
     // validate length
+    lengthPrompt = lengthPrompt * 1
     console.log(lengthPrompt);
     while ((lengthPrompt < 8) || (lengthPrompt > 128)) {
       lengthPrompt = prompt("Please enter a length for the password, at least 8 and up to 128 characters.");
+    
     }
-    console.log(typeof lengthPrompt);
 
     // character prompt
     var characterAlert = alert("Select which characters you would like to be a part of the password.");
