@@ -21,6 +21,9 @@ function writePassword() {
 
     // Character prompts
     var characterAlert = alert("Select which characters you would like to be a part of the password.");
+    var choices = [lengthPrompt, "NO", "NO", "NO", "NO"];
+
+    while ((choices[1]==="NO") && (choices[2]==="NO") && (choices[3]==="NO") && (choices[4]==="NO")) {
 
     // Lowercase character prompt
     var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
@@ -53,8 +56,12 @@ function writePassword() {
     }
 
     // Allows us to access variables in this function outside of its scope
-    var choices = [lengthPrompt, lowercase, uppercase, numeric, special];
-    return choices;
+    choices = [lengthPrompt, lowercase, uppercase, numeric, special];
+    
+
+  }
+  return choices;
+
   }
 
   // Declaring all characters types
