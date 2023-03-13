@@ -30,32 +30,32 @@ function writePassword() {
     while ((choices[1] === "NO") && (choices[2] === "NO") && (choices[3] === "NO") && (choices[4] === "NO")) {
 
       // Lowercase character prompt
-      var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
+      var lowercase = prompt("Would you like lowercase letters? Please type yes or no.");
       lowercase = lowercase.toUpperCase();
       // Validate input 
       while ((lowercase !== "YES") && (lowercase !== "NO")) {
-        lowercase = prompt("Please type yes or no.");
+        lowercase = prompt("Please type yes or no for lowercase letters.");
         lowercase = lowercase.toUpperCase();
       }
-      var uppercase = prompt("Would you like uppercase characters? Please type yes or no.");
+      var uppercase = prompt("Would you like uppercase letters? Please type yes or no.");
       uppercase = uppercase.toUpperCase();
       // Validate input 
       while ((uppercase !== "YES") && (uppercase !== "NO")) {
-        uppercase = prompt("Please type yes or no.");
+        uppercase = prompt("Please type yes or no for uppercase letters.");
         uppercase = uppercase.toUpperCase();
       }
-      var numeric = prompt("Would you like numeric characters? Please type yes or no.");
+      var numeric = prompt("Would you like numbers? Please type yes or no.");
       numeric = numeric.toUpperCase();
       // Validate input 
       while ((numeric !== "YES") && (numeric !== "NO")) {
-        numeric = prompt("Please type yes or no.");
+        numeric = prompt("Please type yes or no for numbers");
         numeric = numeric.toUpperCase();
       }
       var special = prompt("Would you like special characters? Please type yes or no.");
       special = special.toUpperCase();
       // Validate input 
       while ((special !== "YES") && (special !== "NO")) {
-        special = prompt("Please type yes or no.");
+        special = prompt("Please type yes or no for special characters");
         special = special.toUpperCase();
       }
 
