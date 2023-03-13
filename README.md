@@ -1,36 +1,35 @@
-# <Your-Project-Title>
+# Password Generator
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+This project is a password generator designed to let a user pick certain aspects they would like to include in their password.
+Those aspects are:
+- Password length
+- If they want to include lowercase characters
+- If they want to include uppercase characters
+- If they want to include numeric characters
+- If they want to include special characters
+There is validation to ensure that a user:
+- Inputed a length no less than 8 and no greater than 128
+- Explicitly wrote "yes" or "no" (not case sensitive)
+- Chose at least one character type
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+This project was almost solely a practice in JavaScript. It includes:
+- functions
+- if statements
+- for loops
+- Math functions (.floor and .random)
+- indexing
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+N/A
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Webpage: https://ctalv.github.io/password_generator/
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+![Password Generator Screenshot](assets/images/screenshot.jpeg)
 
 ## Credits
 
