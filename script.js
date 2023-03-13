@@ -23,44 +23,47 @@ function writePassword() {
     var characterAlert = alert("Select which characters you would like to be a part of the password.");
     var choices = [lengthPrompt, "NO", "NO", "NO", "NO"];
 
-    while ((choices[1]==="NO") && (choices[2]==="NO") && (choices[3]==="NO") && (choices[4]==="NO")) {
+    while ((choices[1] === "NO") && (choices[2] === "NO") && (choices[3] === "NO") && (choices[4] === "NO")) {
 
-    // Lowercase character prompt
-    var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
-    lowercase = lowercase.toUpperCase();
-    // Validate input 
-    while ((lowercase !== "YES") && (lowercase !== "NO")) {
-      lowercase = prompt("Please type yes or no.");
+      // Lowercase character prompt
+      var lowercase = prompt("Would you like lowercase characters? Please type yes or no.");
       lowercase = lowercase.toUpperCase();
-    }
-    var uppercase = prompt("Would you like uppercase characters? Please type yes or no.");
-    uppercase = uppercase.toUpperCase();
-    // Validate input 
-    while ((uppercase !== "YES") && (uppercase !== "NO")) {
-      uppercase = prompt("Please type yes or no.");
+      // Validate input 
+      while ((lowercase !== "YES") && (lowercase !== "NO")) {
+        lowercase = prompt("Please type yes or no.");
+        lowercase = lowercase.toUpperCase();
+      }
+      var uppercase = prompt("Would you like uppercase characters? Please type yes or no.");
       uppercase = uppercase.toUpperCase();
-    }
-    var numeric = prompt("Would you like numeric characters? Please type yes or no.");
-    numeric = numeric.toUpperCase();
-    // Validate input 
-    while ((numeric !== "YES") && (numeric !== "NO")) {
-      numeric = prompt("Please type yes or no.");
+      // Validate input 
+      while ((uppercase !== "YES") && (uppercase !== "NO")) {
+        uppercase = prompt("Please type yes or no.");
+        uppercase = uppercase.toUpperCase();
+      }
+      var numeric = prompt("Would you like numeric characters? Please type yes or no.");
       numeric = numeric.toUpperCase();
-    }
-    var special = prompt("Would you like special characters? Please type yes or no.");
-    special = special.toUpperCase();
-    // Validate input 
-    while ((special !== "YES") && (special !== "NO")) {
-      special = prompt("Please type yes or no.");
+      // Validate input 
+      while ((numeric !== "YES") && (numeric !== "NO")) {
+        numeric = prompt("Please type yes or no.");
+        numeric = numeric.toUpperCase();
+      }
+      var special = prompt("Would you like special characters? Please type yes or no.");
       special = special.toUpperCase();
+      // Validate input 
+      while ((special !== "YES") && (special !== "NO")) {
+        special = prompt("Please type yes or no.");
+        special = special.toUpperCase();
+      }
+
+      // Allows us to access variables in this function outside of its scope
+      choices = [lengthPrompt, lowercase, uppercase, numeric, special];
+
+      if ((choices[1] === "NO") && (choices[2] === "NO") && (choices[3] === "NO") && (choices[4] === "NO")) {
+      var noAlert = alert("Please select yes for at least one type of character.");
+      }
+
     }
-
-    // Allows us to access variables in this function outside of its scope
-    choices = [lengthPrompt, lowercase, uppercase, numeric, special];
-    
-
-  }
-  return choices;
+    return choices;
 
   }
 
@@ -74,7 +77,7 @@ function writePassword() {
   uppercaseChar = uppercaseChar.split("");
   lowercaseChar = lowercaseChar.split("");
   specialChar = specialChar.split("");
-  
+
   // Declare empty array to store a full list of all the chosen characters
   var passwordChoices = [];
   // Declares empty array to store randomized characters at password length
@@ -137,9 +140,9 @@ function writePassword() {
 
 
   // IF the number of times the user chose YES is NOT equally divisible into the length of the password
-  if (passwordChar[0]%numYes) {
+  if (passwordChar[0] % numYes) {
     // Calculate the floor number of the number of 
-    var remainderFull = (Math.floor(passwordDiv))*numYes;
+    var remainderFull = (Math.floor(passwordDiv)) * numYes;
     // Determine the difference between the chosen length of the password and the
     var remainder = passwordChar[0] - remainderFull;
 
@@ -150,13 +153,13 @@ function writePassword() {
   }
   // passwordCharArray is an array now with an equal amount of randomized characters at the specified length
 
-// Copy of array to erase
-var copyPasswordCharArray = passwordCharArray;
-var newPassword = []; // Declare empty array for final password
+  // Copy of array to erase
+  var copyPasswordCharArray = passwordCharArray;
+  var newPassword = []; // Declare empty array for final password
 
   for (var i = copyPasswordCharArray.length; i > 0; i--) {
     // Choose random spot in copied array
-    var selectNum = Math.floor(Math.random()*copyPasswordCharArray.length);
+    var selectNum = Math.floor(Math.random() * copyPasswordCharArray.length);
     // Grab the string or character in that random spot
     var selectChar = copyPasswordCharArray[selectNum];
     // Erase that spot AND shorten array accordingly
@@ -164,7 +167,7 @@ var newPassword = []; // Declare empty array for final password
     // Place that character at the end of the finalized password array
     newPassword = newPassword.concat(selectChar);
   }
-// newPassword is a randomized version of passwordCharArray
+  // newPassword is a randomized version of passwordCharArray
 
   var passwordText = document.querySelector("#password");
   // Turn final password (var newPassword) into a string from an array
