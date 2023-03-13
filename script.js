@@ -11,9 +11,12 @@ function writePassword() {
   // Function that will ask the user prompts
   function generatePassword() {
 
+  
     // Prompt series + Criteria
     var lengthPrompt = prompt("Choose a length for the password, at least 8 and up to 128 characters.");
-
+    
+    // if statement to cancel out code if user selects 'Cancel'
+    if (lengthPrompt) {
     // Validate length 
     while ((lengthPrompt < 8) || (lengthPrompt > 128)) {
       lengthPrompt = prompt("Please enter a length for the password, at least 8 and up to 128 characters.");
@@ -66,7 +69,7 @@ function writePassword() {
 
     }
     return choices;
-
+  }
   }
 
   // Declaring all characters types
