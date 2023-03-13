@@ -23,6 +23,7 @@ function writePassword() {
     var characterAlert = alert("Select which characters you would like to be a part of the password.");
     var choices = [lengthPrompt, "NO", "NO", "NO", "NO"];
 
+    // To make sure user selects at least on character type
     while ((choices[1] === "NO") && (choices[2] === "NO") && (choices[3] === "NO") && (choices[4] === "NO")) {
 
       // Lowercase character prompt
@@ -58,6 +59,7 @@ function writePassword() {
       // Allows us to access variables in this function outside of its scope
       choices = [lengthPrompt, lowercase, uppercase, numeric, special];
 
+      // IF user does not select at least one character type, alert is given
       if ((choices[1] === "NO") && (choices[2] === "NO") && (choices[3] === "NO") && (choices[4] === "NO")) {
       var noAlert = alert("Please select yes for at least one type of character.");
       }
